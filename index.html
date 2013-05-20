@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is a very simple audio sequencer using JS and HTML5">
     <meta name="keywords" content="audio, sequencer, audio sequencer, music, machine drum, beat, hit">
     <meta name="author" content="renasboy - renasboy@gmail.com">
-	<title>Simple Audio Sequencer</title>
+    <title>Simple Audio Sequencer</title>
     <style>
     audio {
         display: none;
@@ -180,7 +180,7 @@ var Sequencer = function () {
                 this.play();
             }
         });
-        self.looping = setTimeout(function () { self.loop(); }, 60000 / self.tempo / 4);
+        self.looping = setTimeout(function () { self.loop(); }, 60000 / self.tempo / (self.steps / 4));
     };
 
     self.bind = function () {
@@ -192,7 +192,7 @@ var Sequencer = function () {
             if (self.looping) {
                 return;
             }
-            self.looping = setTimeout(function () { self.loop(); }, 60000 / self.tempo / 4);
+            self.looping = setTimeout(function () { self.loop(); }, 60000 / self.tempo / (self.steps / 4));
         })
 
         $('#pause').on('click', function () {
@@ -223,7 +223,7 @@ var Sequencer = function () {
             self.draw();
 
             // rebind the beats
-            $$('table td.beat').on('click', function () {
+            $$('.beat').on('click', function () {
                 this.classList.toggle('on');
             });
         });
@@ -315,7 +315,7 @@ var Sequencer = function () {
 
         self.draw();
         // rebind the beats
-        $$('table td.beat').on('click', function () {
+        $$('.beat').on('click', function () {
             this.classList.toggle('on');
         });
 
