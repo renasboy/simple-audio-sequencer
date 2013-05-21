@@ -71,8 +71,9 @@ steps: <select name="steps" id="steps">
 
 <ul>
 <li><a href="javascript:;" class="pattern" data-pattern="step1">Drum'n'Bass</a></li>
-<li><a href="javascript:;" class="pattern" data-pattern="step2">Jungle</a></li>
+<li><a href="javascript:;" class="pattern" data-pattern="step2">Breakbeat</a></li>
 <li><a href="javascript:;" class="pattern" data-pattern="step3">Reggae</a></li>
+<li><a href="javascript:;" class="pattern" data-pattern="step4">Jungle</a></li>
 </ul>
 
 <script>
@@ -238,6 +239,7 @@ var Sequencer = function () {
 
     self.patterns = {
         step1: {
+            name: 'Drum n Bass',
             tempo: 180,
             steps: 16,
             pattern: {
@@ -260,6 +262,7 @@ var Sequencer = function () {
             }
         },
         step2: {
+            name: 'Breakbeat',
             tempo: 136,
             steps: 16,
             pattern: {
@@ -282,6 +285,7 @@ var Sequencer = function () {
             }
         },
         step3: {
+            name: 'Reggae',
             tempo: 70,
             steps: 16,
             pattern: {
@@ -303,6 +307,29 @@ var Sequencer = function () {
                 15: [ 'snd5' ]
             }
         },
+        step4: {
+            name: 'Jungle',
+            tempo: 160,
+            steps: 16,
+            pattern: {
+                0: [ 'snd1', 'snd2' ],
+                1: null,
+                2: [ 'snd1' ],
+                3: null,
+                4: [ 'snd3' ],
+                5: [ 'snd1' ],
+                6: [ 'snd1', 'snd6' ],
+                7: [ 'snd1' ],
+                8: [ 'snd1' ],
+                9: [ 'snd1' ],
+                10: [ 'snd2' ],
+                11: null,
+                12: [ 'snd1', 'snd3' ],
+                13: null,
+                14: [ 'snd1', 'snd6' ],
+                15: [ 'snd6' ]
+            }
+        }
     };
 
     self.pattern = function (pattern) {
